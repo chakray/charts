@@ -1,4 +1,4 @@
-import { ElementRef, AfterViewInit,
+import { ElementRef, AfterViewInit, HostBinding,
   Output, EventEmitter, Input, Component } from '@angular/core';
 
 import { ChartLoader } from './chart.loader';
@@ -28,6 +28,8 @@ export class CcChartTag implements AfterViewInit {
     private el: ElementRef) {}
   ngAfterViewInit() {
     this._ld.init(this.nel, this._data, this._opts);
+    const { name = 'null' } = this._ld.engine || {};
+    this.nel.classList.toggle(name);
     this.emit('init', this._ld.handle);
   }
   reload() {

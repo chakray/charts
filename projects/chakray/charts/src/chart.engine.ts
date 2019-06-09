@@ -14,4 +14,7 @@ export class ChartEngine {
   }
   reload(handle, data, opts) {
   }
+  copy(o) {
+    return Object.assign(copy(this.opts || {}), o);
+  }
 }
