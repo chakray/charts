@@ -10,5 +10,8 @@ export class ChartEngine {
   opts: object;
   init(el, data, opts) {
     opts = Object.assign(copy(this.opts), opts);
+    return {} as any;
+  }
+  reload(handle, data, opts) {
   }
 }

@@ -25,7 +25,6 @@ export class ChartLoader {
   }
   reload(data, opts = new ChartOptions()) {
     if (!this.handle) { return; }
-    this.handle.data = data;
-    this.handle.opts = opts;
+    this.engine.reload(this.handle, data, opts);
   }
 }

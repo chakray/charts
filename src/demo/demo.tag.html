@@ -1,4 +1,7 @@
-DMO
-<p></p>
-<cc-chart [data]='c1.data' [opts]='c1.opts' (event)='evt("c1", $event)'>
-</cc-chart>
+<cc-chart *ngFor='let c of ds.list; let i = index'
+  [data]='c.data || ds.list[0].data' [opts]='c.opts'
+  (event)='evt("c" + index, $event)'></cc-chart>
+
+<cc-chart [data]='ds.radar.data' [opts]='ds.radar.opts'
+  (event)='evt("radar", $event)'></cc-chart>
+

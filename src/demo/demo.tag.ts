@@ -1,27 +1,18 @@
 import { Component } from '@angular/core';
+import { DataSet } from './data.set';
 
 @Component({
     selector: 'app-demo',
     templateUrl: './demo.tag.html',
-    styleUrls: ['./demo.tag.sass']
+    styleUrls: ['./demo.tag.sass'],
+    providers: [DataSet]
 })
 export class DemoTag {
-  c1 = {
-    data: {
-      labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-      series: [
-        [5, 2, 4, 2, 0]
-      ]
-    },
-    opts: {
-      type: 'Bar',
-      seriesBarDistance: 12,
-      low: -10,
-      high: 10
-    }
-  };
-
+  get ds() {
+    return this._ds;
+  }
+  constructor(private _ds: DataSet) {}
   evt(k, e) {
-      console.log(k, e);
+      // console.log(k, e);
   }
 }

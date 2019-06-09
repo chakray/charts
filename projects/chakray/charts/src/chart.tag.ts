@@ -11,11 +11,11 @@ import { ChartLoader } from './chart.loader';
 export class CcChartTag implements AfterViewInit {
   @Input() set data(v) {
     this._data = v;
-    this._ld.reload(v, this._opts);
+    this.reload();
   }
   @Input() set opts(v) {
     this._opts = v;
-    this._ld.reload(this._data, this._opts);
+    this.reload();
   }
   @Output() event = new EventEmitter();
   get nel() {
@@ -29,6 +29,10 @@ export class CcChartTag implements AfterViewInit {
   ngAfterViewInit() {
     this._ld.init(this.nel, this._data, this._opts);
     this.emit('init', this._ld.handle);
+  }
+  reload() {
+    this._ld.reload(this._data, this._opts);
+    this.emit('reloaded', this._ld.handle);
   }
   emit(name, data) {
     this.event.emit({ name, data });
