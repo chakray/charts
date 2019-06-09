@@ -1,6 +1,6 @@
 {
   "name": "@chakray/charts",
-  "description": "quick setup for github-pages lander",
+  "description": "charting wrapper",
   "version": "0.1.0",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
@@ -10,7 +10,8 @@
   },
   "license": "MIT",
   "keywords": [
-    "angular", "charts", "chakray"
+    "angular", "charts", "chakray",
+    "radar", "d3", "chartist"
   ],
   "repository": {
     "type": "git",
