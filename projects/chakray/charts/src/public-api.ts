@@ -2,6 +2,7 @@
  * Public API Surface of charts
  */
 
-export * from './lib/charts.service';
-export * from './lib/charts.component';
-export * from './lib/charts.module';
+export * from './charts.mod';
+export * from './chart.engine';
+export * from './chart.loader';
+export * from './chart.tag';

@@ -1,8 +1,26 @@
 {
   "name": "@chakray/charts",
-  "version": "0.0.1",
+  "description": "quick setup for github-pages lander",
+  "version": "0.1.0",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
     "@angular/core": "^8.0.0"
+  },
+  "dependencies": {
+  },
+  "license": "MIT",
+  "keywords": [
+    "angular", "charts", "chakray"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chakray/charts.git"
+  },
+  "homepage": "https://chakray.github.io/charts",
+  "bugs": {
+    "url": "https://github.com/chakray/charts/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

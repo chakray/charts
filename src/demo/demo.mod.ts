@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ChartsModule } from '@chakray/charts';
+import { ChartsMod, ChartEngine } from '@chakray/charts';
+
+import { Chartist } from './chartist';
 import { DemoTag } from './demo.tag';
 
 const routes: Routes = [{
@@ -11,8 +13,11 @@ const routes: Routes = [{
 
 @NgModule({
   imports: [
-    ChartsModule,
+    ChartsMod,
     RouterModule.forChild(routes)],
+  providers: [
+    { provide: ChartEngine, useClass: Chartist, multi: true }
+  ],
   declarations: [DemoTag],
   exports: [RouterModule]
 })
