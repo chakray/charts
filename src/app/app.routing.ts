@@ -8,21 +8,21 @@ import { Head } from '@chakray/utils';
 import { AppLoader } from './app.loader';
 import { heroCfg } from './app.config';
 
-import { AppDemoTag } from './demo/demo.tag';
+import { AppBaseTag } from './base/base.tag';
 
 const routes: Routes = [{
 //   path: '', pathMatch: 'full', redirectTo: 'gmaps'
 // }, {
   path: 'setup', component: MarkedTag, resolve: { loader: AppLoader }
 }, {
-  path: 'demo', component: AppDemoTag
+  path: 'demo', component: AppBaseTag, loadChildren: 'src/demo/demo.mod#DemoMod'
 }, {
   path: '**', pathMatch: 'full', redirectTo: '/'
 }];
 
 @NgModule({
   declarations: [
-    AppDemoTag
+    AppBaseTag
   ],
   imports: [
     HttpClientModule,

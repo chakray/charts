@@ -130,6 +130,41 @@
           }
         }
       }
+    },
+    "@chakray/charts": {
+      "projectType": "library",
+      "root": "projects/chakray/charts",
+      "sourceRoot": "projects/chakray/charts/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/chakray/charts/tsconfig.lib.json",
+            "project": "projects/chakray/charts/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/chakray/charts/src/test.ts",
+            "tsConfig": "projects/chakray/charts/tsconfig.spec.json",
+            "karmaConfig": "projects/chakray/charts/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/chakray/charts/tsconfig.lib.json",
+              "projects/chakray/charts/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "demoCharts"
 }
